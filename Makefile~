@@ -1,0 +1,10 @@
+CXX = g++
+CXXFLAGS = -lGL -lGLU -lglut
+
+all: assign1
+
+assign1: main.cpp point.cpp
+	$(CXX) $(CXXFLAGS) RgbImage.cpp main.cpp -o assign1
+
+clean:
+	rm -f *.o assign1

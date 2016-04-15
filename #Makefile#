@@ -1,0 +1,16 @@
+CXX = g++
+CXXFLAGS = -lGL -lGLU -lglut
+
+all: assign2
+
+assign1: main.o md2.o
+	$(CXX) $(CXXFLAGS) -o assign2 main.o md2.o
+
+main.o: main.cpp md2.h
+	$(CXX) $(CXXFLAGS) -c main.cpp
+
+md2.o:  md2.cpp md2.h
+	$(CXX) $(CXXFLAGS) -c md2.cpp
+
+clean:
+	rm -f *.o assign2
