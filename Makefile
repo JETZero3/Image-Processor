@@ -4,13 +4,13 @@ CXXFLAGS = -lGL -lGLU -lglut
 all: assign1
 
 assign1: main.o RgbImage.o
-	$(CXX) $(CXXFLAGS) -o assign1 main.o RgbImage.o
+	$(CXX) -o assign1 main.o RgbImage.o $(CXXFLAGS)
 	
 main.o: main.cpp RgbImage.h
-	$(CXX) $(CXXFLAGS) -c main.cpp
+	$(CXX) -c main.cpp  $(CXXFLAGS)
 
 RgbImage.o: RgbImage.cpp RgbImage.h
-	$(CXX) $(CXXFLAGS) -c RgbImage.cpp
+	$(CXX) -c RgbImage.cpp  $(CXXFLAGS)
 
 clean:
 	rm -f *.o assign1
